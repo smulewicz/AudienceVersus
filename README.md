@@ -20,6 +20,7 @@ npm install
 
 ## Related projects
 - [AudienceVersus-SpigotPlugin][AudienceVersus-SpigotPlugin]
+[AudienceVersus-SpigotPlugin]: https://github.com/smulewicz/AudienceVersus-SpigotPlugin
 
 ## Credits
 [a6d video](https://www.youtube.com/watch?v=ywOfMD2t8dc).
