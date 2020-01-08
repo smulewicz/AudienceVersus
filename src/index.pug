@@ -1,0 +1,225 @@
+include _.pug
+
+- var items = [["Debug", "Debug", "Debug", 1337]];
+
+//- Wyszukiwarka po kategoriach i po nazwach.
+//- Sortowanie po cenach.
+//- Inne kolory przycisków (zależne od kategorii)
+//- Inne kolory opisów
+//- Boczny panel na górę?
+//- Historia zweryfikowanych zakupów
+//- Stackowanie zakupów
+//- Pop-up
+
+mixin item(type, description, name, cost)
+	.list__item
+		div
+			.list__item__name= name
+			.list__item__description= description
+		div(style="height:80px")
+			img(height="100%" src="images/"+name+".webp")
+		if type == 'Spawn'
+			.list__item__use-button.spawn= type
+		if type == 'Apply'
+			.list__item__use-button.effect= type
+		if type == 'Use'
+			.list__item__use-button.use= type
+		.emeralds--min2
+			.img.img--emerald
+			.emeralds__amount= cost
+
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		meta(name="description" content="AudienceVersus")
+		meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5")
+		title AudienceVersus
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=K2D:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap&subset=latin-ext")
+		link(rel="stylesheet" href="css/index.css")
+		script(type="text/javascript").
+		-
+			var items = [
+				//- Passive mob
+				['Spawn', 'Passive mob', 'Bat', 300],
+				['Spawn', 'Passive mob', 'Cat', 300],
+				['Spawn', 'Passive mob', 'Chicken', 300],
+				['Spawn', 'Passive mob', 'Cod', 300],
+				['Spawn', 'Passive mob', 'Cow', 300],
+				['Spawn', 'Passive mob', 'Donkey', 300],
+				['Spawn', 'Passive mob', 'Fox', 300],
+				['Spawn', 'Passive mob', 'Giant', 300],
+				['Spawn', 'Passive mob', 'Horse', 300],
+				['Spawn', 'Passive mob', 'Mooshroom', 300],
+				['Spawn', 'Passive mob', 'Mule', 300],
+				['Spawn', 'Passive mob', 'Ocelot', 300],
+				['Spawn', 'Passive mob', 'Panda', 300],
+				['Spawn', 'Passive mob', 'Parrot', 300],
+				['Spawn', 'Passive mob', 'Pig', 300],
+				['Spawn', 'Passive mob', 'Rabbit', 300],
+				['Spawn', 'Passive mob', 'Salmon', 300],
+				['Spawn', 'Passive mob', 'Sheep', 300],
+				['Spawn', 'Passive mob', 'Skeleton Horse', 300],
+				['Spawn', 'Passive mob', 'Snow Man', 300],
+				['Spawn', 'Passive mob', 'Squid', 300],
+				['Spawn', 'Passive mob', 'Tropical Fish', 300],
+				['Spawn', 'Passive mob', 'Turtle', 300],
+				['Spawn', 'Passive mob', 'Villager', 300],
+				['Spawn', 'Passive mob', 'Zombie Horse', 300],
+				//- ['Spawn', 'Passive mob', 'NPC', 300],
+
+				//- Hostile mob
+				['Spawn', 'Hostile mob', 'Blaze', 300],
+				['Spawn', 'Hostile mob', 'Creeper', 300],
+				['Spawn', 'Hostile mob', 'Drowned', 300],
+				['Spawn', 'Hostile mob', 'Elder Guardian', 300],
+				['Spawn', 'Hostile mob', 'Ender Dragon', 300],
+				['Spawn', 'Hostile mob', 'Endermite', 300],
+				['Spawn', 'Hostile mob', 'Evoker', 300],
+				['Spawn', 'Hostile mob', 'Ghast', 300],
+				['Spawn', 'Hostile mob', 'Guardian', 300],
+				['Spawn', 'Hostile mob', 'Husk', 300],
+				['Spawn', 'Hostile mob', 'Illusioner', 300],
+				['Spawn', 'Hostile mob', 'Magma Cube', 300],
+				['Spawn', 'Hostile mob', 'Phantom', 300],
+				['Spawn', 'Hostile mob', 'Pillager', 300],
+				['Spawn', 'Hostile mob', 'Ravager', 300],
+				['Spawn', 'Hostile mob', 'Shulker', 300],
+				['Spawn', 'Hostile mob', 'Silverfish', 300],
+				['Spawn', 'Hostile mob', 'Skeleton', 300],
+				['Spawn', 'Hostile mob', 'Slime', 300],
+				['Spawn', 'Hostile mob', 'Stray', 300],
+				['Spawn', 'Hostile mob', 'Vex', 300],
+				['Spawn', 'Hostile mob', 'Vindicator', 300],
+				['Spawn', 'Hostile mob', 'Witch', 300],
+				['Spawn', 'Hostile mob', 'Wither Boss', 300],
+				['Spawn', 'Hostile mob', 'Wither Skeleton', 300],
+				['Spawn', 'Hostile mob', 'Zombie', 300],
+				['Spawn', 'Hostile mob', 'Zombie Villager', 300],
+
+				//- Neutral mob
+				['Spawn', 'Neutral mob', 'Bee', 300],
+				['Spawn', 'Neutral mob', 'Cave Spider', 300],
+				['Spawn', 'Neutral mob', 'Dolphin', 300],
+				['Spawn', 'Neutral mob', 'Enderman', 300],
+				['Spawn', 'Neutral mob', 'Iron Golem', 300],
+				['Spawn', 'Neutral mob', 'Llama', 300],
+				['Spawn', 'Neutral mob', 'Polar Bear', 300],
+				['Spawn', 'Neutral mob', 'Pufferfish', 300],
+				['Spawn', 'Neutral mob', 'Spider', 300],
+				['Spawn', 'Neutral mob', 'Trader Llama', 300],
+				['Spawn', 'Neutral mob', 'Wandering Trader', 300],
+				['Spawn', 'Neutral mob', 'Wolf', 300],
+				['Spawn', 'Neutral mob', 'Zombie Pigman', 300],
+
+				//- Helpful effect
+				['Apply', 'Helpful effect', 'Absorption', 300],
+				['Apply', 'Helpful effect', 'Conduit Power', 300],
+				['Apply', 'Helpful effect', 'Dolphin\'s Grace', 300],
+				['Apply', 'Helpful effect', 'Fire Resistance', 300],
+				['Apply', 'Helpful effect', 'Haste', 300],
+				['Apply', 'Helpful effect', 'Health Boost', 300],
+				['Apply', 'Helpful effect', 'Hero of the Village', 300],
+				['Apply', 'Helpful effect', 'Instant Health', 300],
+				['Apply', 'Helpful effect', 'Invisibility', 300],
+				['Apply', 'Helpful effect', 'Jump Boost', 300],
+				['Apply', 'Helpful effect', 'Luck', 300],
+				['Apply', 'Helpful effect', 'Night Vision', 300],
+				['Apply', 'Helpful effect', 'Regeneration', 300],
+				['Apply', 'Helpful effect', 'Resistance', 300],
+				['Apply', 'Helpful effect', 'Saturation', 300],
+				['Apply', 'Helpful effect', 'Slow Falling', 300],
+				['Apply', 'Helpful effect', 'Speed', 300],
+				['Apply', 'Helpful effect', 'Strength', 300],
+				['Apply', 'Helpful effect', 'Water Breathing', 300],
+
+				//- Harmful effect
+				['Apply', 'Harmful effect', 'Bad Luck', 300],
+				['Apply', 'Harmful effect', 'Bad Omen', 300],
+				['Apply', 'Harmful effect', 'Blindness', 300],
+				//-['Apply', 'Harmful effect', 'Fatal Poison', 300],
+				['Apply', 'Harmful effect', 'Glowing', 300],
+				['Apply', 'Harmful effect', 'Hunger', 300],
+				['Apply', 'Harmful effect', 'Instant Damage', 300],
+				['Apply', 'Harmful effect', 'Levitation', 300],
+				['Apply', 'Harmful effect', 'Mining Fatigue', 300],
+				['Apply', 'Harmful effect', 'Nausea', 300],
+				['Apply', 'Harmful effect', 'Poison', 300],
+				['Apply', 'Harmful effect', 'Slowness', 300],
+				['Apply', 'Harmful effect', 'Wither', 300],
+				['Apply', 'Harmful effect', 'Weakness', 300],
+
+				//- Other
+				['Use', 'Other', 'Teleport', 300],
+				['Use', 'Other', 'Respawn', 300],
+				['Use', 'Other', 'Drop', 300],
+			];
+	body
+		.main
+			.main__top
+				.left
+					.logo VPtr.
+					.page / AudienceVersus
+				.right
+					.button Sign-in
+			.main__center
+				.player
+					//- iframe.fit(src="https://www.youtube.com/embed/YKJIgJisL8E" frameborder="0" allowfullscreen)
+				.right
+					.user
+						.user__avatar
+						.user__nickname Guest
+						.user__id /0
+
+					.divider
+						.divider__line
+						.divider__text Emeralds
+
+					.emeralds
+						.img.img--big.img--emerald
+						.emeralds__amount 4 000
+
+					.divider
+						.divider__line
+						.divider__text Top-up packs
+					
+					.top-up
+						.top-up__pack
+							.top-up__pack__name Pure Fun
+							.top-up__pack__description Standard x2 + 1 000
+							.emeralds.emeralds--min
+								.img.img--emerald
+								.emeralds__amount 4 000
+							.top-up__pack__cost 20 PLN
+
+						.divider-min
+
+						.top-up__pack
+							.top-up__pack__name Standard
+							.top-up__pack__description First Try x2 + 500
+							.emeralds.emeralds--min
+								.img.img--emerald
+								.emeralds__amount 1 500
+							.top-up__pack__cost 10 PLN
+
+						.divider-min
+								
+						.top-up__pack
+							.top-up__pack__name First Try
+							.emeralds.emeralds--min
+								.img.img--emerald
+								.emeralds__amount 500
+							.top-up__pack__cost 5 PLN
+					
+					.payment-button.payment-button--google
+					.payment-button.payment-button--paypal
+			div
+				.divider
+					.divider__text Audience's kit
+					.divider__line
+
+				.list
+					each i in items
+						+item(i[0], i[1], i[2], i[3])
+
+			div(style="height: 50px")
