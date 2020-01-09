@@ -4,6 +4,8 @@ It's a website made as a part of [AudienceVersus plugin][url_spigotplugin] for S
 
 > __AudienceVersus__ is a platform made for streamers that gives the audience some control over the game.
 
+> I'm going to rebuild it from scratch.
+
 ### License
 ```
 MIT License
