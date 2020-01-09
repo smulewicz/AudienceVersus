@@ -28,6 +28,9 @@ body {
 				font-weight: 600;
 				padding-left: 10px;
 				padding-right: 10px;
+				&:before {
+					content: '/ ';
+				}
 			}
 		}
 		> .right {
@@ -49,6 +52,10 @@ body {
 			width: 100%;
 			height: 570px;
 			background-color: black;
+			iframe {
+				width: 100%;
+				height: 100%;
+			}
 		}
 		> .right {
 			display: flex;
@@ -151,22 +158,31 @@ body {
 					font-size: 15px;
 					line-height: 40px;
 					padding: 0px 35px;
-					border: 1px solid white;
 					box-shadow: 0px 2px 5px rgba(130, 130, 130, 0.43);
-					color: #1a8bad;
-					background-color: #84ffa4;
 				}
 				.spawn {
-					color: #1a8bad;
 					background-color: #84ffa4;
+					color: darken(#84ffa4, 50%);
+					border: 1px solid mix(#84ffa4, gray, 50%);
+					&:hover, &:focus {
+						background-color: mix(#84ffa4, white, 50%);
+					}
 				}
 				.effect {
-					color: #793ade;
 					background-color: #bc92ff;
+					color: darken(#bc92ff, 50%);
+					border: 1px solid mix(#bc92ff, gray, 50%);
+					&:hover, &:focus {
+						background-color: mix(#bc92ff, white, 50%);
+					}
 				}
 				.use {
-					color: #06905d;
 					background-color: #fdff84;
+					color: darken(#fdff84, 50%);
+					border: 1px solid mix(#fdff84, gray, 50%);
+					&:hover, &:focus {
+						background-color: mix(#fdff84, white, 50%);
+					}
 				}
 			}
 		}
