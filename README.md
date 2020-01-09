@@ -3,13 +3,10 @@ Website made as a part of AudienceVersus plugin for Spigot.
 
 > __AudienceVersus__ is a Spigot plugin inspired by [a6d video][url_a6d-video] that gives gives your audience some control over your Minecraft server.
 
-#### Updates
-- Sign-in pop-up
-- Search pane
-- Sort pane
-- Sidebar on top
-- Verified payments history
-- Items' grouping
+## TODOs
+- sidebar goes on top
+- search input
+- sorting buttons
 
 ## License
 ```
