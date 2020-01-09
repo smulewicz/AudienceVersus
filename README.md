@@ -2,6 +2,8 @@
 It's a website made as a part of [AudienceVersus plugin][url_spigotplugin] for Spigot. 
 > __AudienceVersus__ is a Spigot plugin inspired by [a6d video][url_a6d-video] that gives your donators some control over your Minecraft server.
 
+> __AudienceVersus__ is a platform made for streamers that gives the audience some control over the game.
+
 ### License
 ```
 MIT License
