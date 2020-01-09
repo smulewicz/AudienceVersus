@@ -2,16 +2,6 @@
 It's a website made as a part of AudienceVersus plugin for Spigot. 
 > __AudienceVersus__ is a Spigot plugin inspired by [a6d video][url_a6d-video] that gives your donators some control over your Minecraft server.
 
-### Functions
-- Sign-in using Google or PayPal.
-- Buy an Emerald pack.
-- Spawn some mobs or apply an effect.
-
-### Future tasks
-1. Move sidebar on top
-2. Add search input
-3. Add sorting buttons (name, category, popularity, price)
-
 ### License
 ```
 MIT License
