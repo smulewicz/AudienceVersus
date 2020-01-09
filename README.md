@@ -1,6 +1,6 @@
 # AudienceVersus ![description][url_description] ![version][url_version]
-It's a website made as a part of AudienceVersus plugin for Spigot. 
-> [__AudienceVersus__][url_spigotplugin] is a Spigot plugin inspired by [a6d video][url_a6d-video] that gives your donators some control over your Minecraft server.
+It's a website made as a part of [AudienceVersus plugin][url_spigotplugin] for Spigot. 
+> __AudienceVersus__ is a Spigot plugin inspired by [a6d video][url_a6d-video] that gives your donators some control over your Minecraft server.
 
 ### License
 ```
