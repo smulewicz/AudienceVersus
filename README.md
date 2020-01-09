@@ -1,14 +1,7 @@
-# AudienceVersus ![version](https://img.shields.io/badge/version-1.0.0-blue)
-> Gives your streaming audience some control over the Minecraft world.
+# AudienceVersus ![description][url_description] ![version][url_version]
+Website made as a part of AudienceVersus plugin for Spigot.
 
-#### Functions
-
-
-#### Pre-requirements
-```
-git clone https://github.com/smulewicz/AudienceVersus-WWW
-npm install
-```
+> __AudienceVersus__ is a Spigot plugin inspired by [a6d video][url_a6d-video] that gives gives your audience some control over your Minecraft server.
 
 #### Updates
 - Sign-in pop-up
@@ -18,14 +11,7 @@ npm install
 - Verified payments history
 - Items' grouping
 
-## Related projects
-- [AudienceVersus-SpigotPlugin][AudienceVersus-SpigotPlugin]
-[AudienceVersus-SpigotPlugin]: https://github.com/smulewicz/AudienceVersus-SpigotPlugin
-
-## Credits
-[a6d video](https://www.youtube.com/watch?v=ywOfMD2t8dc).
-
-License
+## License
 ```
 MIT License
 
@@ -50,3 +36,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
+[url_a6d-video]: https://www.youtube.com/watch?v=ywOfMD2t8dc
+[url_version]: https://img.shields.io/badge/version-1.0.0-blue
+[url_description]: https://img.shields.io/badge/WWW-gray
+[url_spigotplugin]: https://github.com/smulewicz/AudienceVersus-SpigotPlugin
