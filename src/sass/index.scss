@@ -3,6 +3,10 @@ body {
 	font-family: K2D;
 }
 
+*:focus {
+	outline: none;
+}
+
 .main {
 	display: flex;
 	flex-direction: column;
@@ -91,6 +95,12 @@ body {
 					align-items: flex-end;
 					cursor: pointer;
 					margin: 0 5px;
+					&:focus {
+						background-color: mix(#ff7f7f, white, 10%);
+					}
+					&:hover:not(:focus) {
+						background-color: #f0f0f0;
+					}
 					> .top-up__pack__name {
 						font-size: 20px;
 						color: #ff7f7f;
@@ -119,9 +129,6 @@ body {
 						padding-right: 5px;
 						font-size: 18px;
 					}
-				}
-				.top-up__pack:hover {
-					background-color: #f0f0f0;
 				}
 			}
 		}

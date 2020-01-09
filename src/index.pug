@@ -10,11 +10,11 @@ mixin item(type, description, name, cost)
 		div(style="height:80px")
 			img(height="100%" src="images/"+name+".webp")
 		if type == 'Spawn'
-			.list__item__use-button.spawn= type
+			.list__item__use-button.spawn(tabindex="0")= type
 		if type == 'Apply'
-			.list__item__use-button.effect= type
+			.list__item__use-button.effect(tabindex="0")= type
 		if type == 'Use'
-			.list__item__use-button.use= type
+			.list__item__use-button.use(tabindex="0")= type
 		.emeralds--min2
 			.img.img--emerald
 			.emeralds__amount= cost
@@ -155,7 +155,7 @@ html(lang="en")
 					.button Sign-in
 			.main__center
 				.player
-					iframe(src="https://www.youtube.com/embed/YKJIgJisL8E" frameborder="0" allowfullscreen)
+					iframe(tabindex="-1" src="https://www.youtube.com/embed/YKJIgJisL8E" frameborder="0" allowfullscreen)
 				.right
 					.user
 						.user__avatar
@@ -168,14 +168,14 @@ html(lang="en")
 
 					.emeralds
 						.img.img--big.img--emerald
-						.emeralds__amount 4 000
+						.emeralds__amount 0
 
 					.divider
 						.divider__line
 						.divider__text Top-up packs
 					
 					.top-up
-						.top-up__pack
+						.top-up__pack(tabindex="0")
 							.top-up__pack__name Pure Fun
 							.top-up__pack__description Standard x2 + 1 000
 							.emeralds.emeralds--min
@@ -185,7 +185,7 @@ html(lang="en")
 
 						.divider-min
 
-						.top-up__pack
+						.top-up__pack(tabindex="0")
 							.top-up__pack__name Standard
 							.top-up__pack__description First Try x2 + 500
 							.emeralds.emeralds--min
@@ -195,7 +195,7 @@ html(lang="en")
 
 						.divider-min
 								
-						.top-up__pack
+						.top-up__pack(tabindex="0")
 							.top-up__pack__name First Try
 							.emeralds.emeralds--min
 								.img.img--emerald
